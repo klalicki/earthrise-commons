@@ -1,14 +1,26 @@
-import { Page } from "../components/page";
-import { client } from "../tina/__generated__/databaseClient";
+import Link from 'next/link';
+import { reader } from './reader';
+import './styles.css';
 
-export default async function Home() {
-  const res = await client.queries.page({ relativePath: "home.md" });
+export default async function Homepage() {
+  const posts = await reader.collections.posts.all();
+
   return (
-    <Page
-      // https://github.com/vercel/next.js/issues/47447
-      data={JSON.parse(JSON.stringify(res.data))}
-      query={res.query}
-      variables={res.variables}
-    />
+    <div>
+      <h1>Keystatic ⚡️</h1>
+      <p>This homepage shows how to load a collection from the reader API.</p>
+      <p>
+        <a href="/keystatic">Click here to visit the Admin UI</a>, or the link
+        below to view a post in the collection.
+      </p>
+      <h2>Posts</h2>
+      <ul>
+        {posts.map(post => (
+          <li key={post.slug}>
+            <Link href={`/${post.slug}`}>{post.entry.title}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
