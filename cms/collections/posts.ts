@@ -5,6 +5,7 @@ const posts = collection({
   label: "Posts",
   slugField: "title",
   path: "content/posts/*",
+  entryLayout: "content",
   format: { contentField: "content" },
   schema: {
     title: fields.slug({ name: { label: "Title" } }),
