@@ -21,5 +21,15 @@ const sdgs = [
 import { fields } from "@keystatic/core";
 
 export const UNGoals = fields.array(
-  fields.select({ label: "UN SDG", options: sdgs, defaultValue: "sdg-1" })
+  fields.select({ label: "UN SDG", options: sdgs, defaultValue: "sdg-1" }),
+  {
+    label: "UN Sustainable Development Goals",
+    itemLabel(props) {
+      return (
+        sdgs.find((item) => {
+          return item.value == props.value;
+        })?.label || "Unknown SDG"
+      );
+    },
+  }
 );
