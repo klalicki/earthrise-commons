@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import ECHeader from "../components/layout/ECHeader/ECHeader";
+import ECHeader from "../../components/layout/ECHeader/ECHeader";
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
