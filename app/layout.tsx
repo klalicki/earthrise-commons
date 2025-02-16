@@ -1,7 +1,8 @@
 import "./globals.scss";
-import { Inter } from "next/font/google";
+import { Work_Sans, Inter } from "next/font/google";
 import ECHeader from "../components/layout/header/ECHeader";
 const inter = Inter({ subsets: ["latin"] });
+const workSans = Work_Sans({ subsets: ["latin-ext"] });
 
 export const metadata = {
   title: "Self Hosted Tina App",
@@ -15,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={workSans.className}>
         <ECHeader />
         <main>{children}</main>
         <footer></footer>
