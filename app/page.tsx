@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { reader } from './reader';
-import './styles.css';
+import './styles.scss';
 
 export default async function Homepage() {
   const posts = await reader.collections.posts.all();

@@ -1,8 +1,8 @@
-import '../styles.css';
-import React from 'react';
-import Markdoc from '@markdoc/markdoc';
-import { reader } from '../reader';
-import { markdocConfig } from '../../keystatic.config';
+import "../styles.scss";
+import React from "react";
+import Markdoc from "@markdoc/markdoc";
+import { reader } from "../reader";
+import { markdocConfig } from "../../keystatic.config";
 
 export default async function Post(props: {
   params: Promise<{ slug: string }>;
@@ -19,7 +19,7 @@ export default async function Post(props: {
   const errors = Markdoc.validate(node, markdocConfig);
   if (errors.length) {
     console.error(errors);
-    throw new Error('Invalid content');
+    throw new Error("Invalid content");
   }
 
   const renderable = Markdoc.transform(node, markdocConfig);
@@ -35,7 +35,7 @@ export default async function Post(props: {
 export async function generateStaticParams() {
   const slugs = await reader.collections.posts.list();
 
-  return slugs.map(slug => ({
+  return slugs.map((slug) => ({
     slug,
   }));
 }
