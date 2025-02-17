@@ -1,12 +1,12 @@
 import { collection, fields } from "@keystatic/core";
 import contentSchema from "./contentSchema";
-const posts = collection({
-  label: "Posts",
+const lessons = collection({
+  label: "Lessons",
   slugField: "title",
-  path: "content/posts/*",
+  path: "content/lessons/*",
   entryLayout: "content",
   format: { contentField: "content" },
   schema: contentSchema,
 });
 
-export default posts;
+export default lessons;
