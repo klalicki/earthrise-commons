@@ -32,7 +32,7 @@ export default async function Post(props: {
 }
 
 export async function generateStaticParams() {
-  const slugs = await reader.collections.posts.list();
+  const slugs = await reader.collections.people.list();
 
   return slugs.map((slug) => ({
     slug,
