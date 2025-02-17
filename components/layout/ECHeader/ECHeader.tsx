@@ -26,7 +26,7 @@ const ECHeader = () => {
               isActive={isSideNavExpanded}
               aria-expanded={isSideNavExpanded}
             />
-            <HeaderName href="#" prefix="">
+            <HeaderName href="/" prefix="">
               Earthrise Commons
             </HeaderName>
             <HeaderNavigation aria-label="Earthrise Commons">
