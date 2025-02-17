@@ -2,7 +2,6 @@ import Link from "next/link";
 import { reader } from "./reader";
 
 export default async function Homepage() {
-  const posts = await reader.collections.posts.all();
   const collections = reader.collections;
   return (
     <div>
@@ -30,14 +29,6 @@ export default async function Homepage() {
           </>
         );
       })}
-
-      <ul>
-        {posts.map((post) => (
-          <li key={post.slug}>
-            <Link href={`/${post.slug}`}>{post.entry.title}</Link>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }

@@ -12,7 +12,6 @@ export default config({
   },
   collections: {
     people,
-    posts,
     lessons,
     community,
     chapters,
