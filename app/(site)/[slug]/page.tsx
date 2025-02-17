@@ -3,6 +3,7 @@ import React from "react";
 import Markdoc from "@markdoc/markdoc";
 import { reader } from "../reader";
 import { markdocConfig } from "../../../keystatic.config";
+import { MarkdocRenderer } from "../../../components/layout/MarkdocRenderer/MarkdocRenderer";
 
 export default async function Post(props: {
   params: Promise<{ slug: string }>;
@@ -16,18 +17,10 @@ export default async function Post(props: {
 
   const { node } = await post.content();
 
-  const errors = Markdoc.validate(node, markdocConfig);
-  if (errors.length) {
-    console.error(errors);
-    throw new Error("Invalid content");
-  }
-
-  const renderable = Markdoc.transform(node, markdocConfig);
-
   return (
     <div>
       <h1>{post.title}</h1>
-      {Markdoc.renderers.react(renderable, React)}
+      <MarkdocRenderer node={node}></MarkdocRenderer>
     </div>
   );
 }
