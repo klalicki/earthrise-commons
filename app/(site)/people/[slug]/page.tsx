@@ -1,7 +1,5 @@
 import React from "react";
-import Markdoc from "@markdoc/markdoc";
 import { reader } from "../../reader";
-import { markdocConfig } from "../../../../keystatic.config";
 import { MarkdocRenderer } from "../../../../components/layout/MarkdocRenderer/MarkdocRenderer";
 
 export default async function Post(props: {

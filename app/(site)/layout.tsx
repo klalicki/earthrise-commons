@@ -10,11 +10,13 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body>
         <ECHeader></ECHeader>
-        <Grid>
-          <Column sm={4} md={6} lg={8} xlg={8}>
-            {children}
-          </Column>
-        </Grid>
+        <main className="cds--content">
+          <Grid>
+            <Column sm={4} md={6} lg={8} xlg={8}>
+              {children}
+            </Column>
+          </Grid>
+        </main>
       </body>
     </html>
   );
