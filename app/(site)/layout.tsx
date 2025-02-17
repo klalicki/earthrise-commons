@@ -12,7 +12,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <ECHeader></ECHeader>
         <main className="cds--content">
           <Grid>
-            <Column sm={4} md={6} lg={8} xlg={8}>
+            <Column sm={4} md={8} lg={10} xlg={10}>
               {children}
             </Column>
           </Grid>
