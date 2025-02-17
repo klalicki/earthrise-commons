@@ -1,0 +1,33 @@
+import React from "react";
+import Markdoc from "@markdoc/markdoc";
+import { reader } from "../../reader";
+import { markdocConfig } from "../../../../keystatic.config";
+import { MarkdocRenderer } from "../../../../components/layout/MarkdocRenderer/MarkdocRenderer";
+export default async function Post(props: {
+  params: Promise<{ slug: string }>;
+}) {
+  const params = await props.params;
+  const { slug } = params;
+
+  const post = await reader.collections.chapters.read(slug);
+
+  if (!post) return <div>Post not found!</div>;
+
+  const { node } = await post.content();
+
+  return (
+    <div>
+      <h1>{post.title}</h1>
+      <MarkdocRenderer node={node}></MarkdocRenderer>
+      {/* {Markdoc.renderers.react(renderable, React)} */}
+    </div>
+  );
+}
+
+export async function generateStaticParams() {
+  const slugs = await reader.collections.chapters.list();
+
+  return slugs.map((slug) => ({
+    slug,
+  }));
+}
