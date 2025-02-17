@@ -9,11 +9,11 @@ export default async function Post(props: {
   const params = await props.params;
   const { slug } = params;
 
-  const post = await reader.collections.people.read(slug);
+  const post = await reader.collections.lessons.read(slug);
 
   if (!post) return <div>Post not found!</div>;
 
-  const { node } = await post.bio();
+  const { node } = await post.content();
 
   const errors = Markdoc.validate(node, markdocConfig);
   if (errors.length) {
@@ -25,7 +25,7 @@ export default async function Post(props: {
 
   return (
     <div>
-      <h1>{post.name}</h1>
+      <h1>{post.title}</h1>
       {Markdoc.renderers.react(renderable, React)}
     </div>
   );
