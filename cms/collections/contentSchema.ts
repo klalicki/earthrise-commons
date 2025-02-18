@@ -11,15 +11,7 @@ const contentSchema = {
     publicPath: "/pages/",
   }),
   UNGoals: customFields.UNGoals,
-  postType: fields.select({
-    label: "Post Type",
-    options: [
-      { value: "chapter", label: "Chapter" },
-      { value: "lesson-plan", label: "Lesson Plan" },
-      { value: "community", label: "Community" },
-    ],
-    defaultValue: "chapter",
-  }),
+  postType: fields.empty(),
   author: fields.relationship({ label: "Author", collection: "people" }),
 
   content: fields.markdoc({
