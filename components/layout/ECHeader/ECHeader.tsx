@@ -1,4 +1,3 @@
-"use client";
 import {
   Header,
   HeaderContainer,
@@ -13,7 +12,7 @@ import {
   HeaderSideNavItems,
 } from "@carbon/react";
 
-const ECHeader = () => {
+const ECHeader = ({ children }) => {
   return (
     <HeaderContainer
       render={({ isSideNavExpanded, onClickSideNavExpand }) => (
@@ -30,6 +29,7 @@ const ECHeader = () => {
               Earthrise Commons
             </HeaderName>
             <HeaderNavigation aria-label="Earthrise Commons">
+              {children}
               <HeaderMenuItem href="#">Link 1</HeaderMenuItem>
               <HeaderMenuItem href="#">Link 2</HeaderMenuItem>
               <HeaderMenuItem href="#">Link 3</HeaderMenuItem>

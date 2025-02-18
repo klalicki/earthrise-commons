@@ -21,10 +21,7 @@ const contentSchema = {
     defaultValue: "chapter",
   }),
   author: fields.relationship({ label: "Author", collection: "people" }),
-  parentPage: fields.relationship({
-    label: "Parent Page",
-    collection: "posts",
-  }),
+
   content: fields.markdoc({
     label: "Content",
     components: contentComponents,
