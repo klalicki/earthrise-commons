@@ -5,6 +5,7 @@ const chapters = collection({
   slugField: "title",
   path: "src/content/chapters/*",
   entryLayout: "content",
+  columns: ["title"],
   format: { contentField: "content" },
   schema: {
     chapterNumber: fields.number({ label: "Chapter Number" }),

@@ -11,7 +11,7 @@ export const contentSchema = {
     publicPath: "/pages/",
   }),
   UNGoals: customFields.UNGoals,
-  postType: fields.empty(),
+
   author: fields.multiRelationship({ label: "Author", collection: "people" }),
 
   content: fields.markdoc({

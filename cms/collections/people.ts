@@ -5,6 +5,7 @@ const people = collection({
   slugField: "name",
   path: "src/content/people/*",
   entryLayout: "content",
+  columns: ["name"],
   format: {
     contentField: "body",
   },
