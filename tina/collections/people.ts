@@ -17,6 +17,7 @@ export const PeopleCollection: Collection = {
       required: true,
       isTitle: true,
     },
+    { name: "photo", type: "image", required: false },
     {
       name: "body",
       type: "rich-text",
