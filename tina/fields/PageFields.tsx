@@ -1,5 +1,6 @@
 import React from "react";
 import type { TinaField } from "tinacms";
+
 export const PageFields: TinaField[] = [
   {
     name: "title",

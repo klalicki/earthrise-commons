@@ -3,7 +3,7 @@ import { BlogCollection } from "./collections/blog";
 import { GlobalConfigCollection } from "./collections/global-config";
 import { PageCollection } from "./collections/page";
 import { PeopleCollection } from "./collections/people";
-
+import { ChapterCollection } from "./collections/chapter";
 // Your hosting provider likely exposes this as an environment variable
 const branch =
   process.env.GITHUB_BRANCH ||
@@ -36,6 +36,7 @@ export default defineConfig({
       PageCollection,
       GlobalConfigCollection,
       PeopleCollection,
+      ChapterCollection,
     ],
   },
 });
