@@ -1,4 +1,5 @@
 import type { Collection } from "tinacms";
+import React from "react";
 
 export const PageCollection: Collection = {
   name: "page",
@@ -12,9 +13,15 @@ export const PageCollection: Collection = {
   },
   fields: [
     {
-      name: "seoTitle",
-      type: "string",
-      required: true,
+      name: "author",
+      type: "reference",
+      collections: ["people"],
+      required: false,
+      ui: {
+        optionComponent: (props, _sys) => {
+          return <p>{props.name}</p>;
+        },
+      },
     },
     {
       name: "body",
