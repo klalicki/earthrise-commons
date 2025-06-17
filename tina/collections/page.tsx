@@ -13,6 +13,11 @@ export const PageCollection: Collection = {
   },
   fields: [
     {
+      name: "title",
+      type: "string",
+      required: false,
+    },
+    {
       name: "author",
       type: "reference",
       collections: ["people"],
@@ -28,6 +33,17 @@ export const PageCollection: Collection = {
       type: "rich-text",
       isBody: true,
       required: true,
+    },
+    {
+      name: "basedOn",
+      label: "Based On Existing Page ('fork')",
+      type: "reference",
+      collections: ["page"],
+      ui: {
+        optionComponent: (props, _sys) => {
+          return <p>{props.title ?? _sys.filename}</p>;
+        },
+      },
     },
   ],
 };
